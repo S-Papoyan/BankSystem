@@ -1,8 +1,10 @@
 package com.digi.banksystem.model;
+
 import com.digi.banksystem.model.enums.Status;
 import lombok.*;
 
 import javax.persistence.*;
+
 @Getter
 @Setter
 @ToString
@@ -24,6 +26,7 @@ public class User {
     private String password;
     @Column(name = "verification_code")
     private String verify;
+    @Enumerated(value = EnumType.ORDINAL)
     private Status status;
     @Column(name = "reset_token")
     private String resetToken;
