@@ -17,7 +17,6 @@ public class BeanConfig {
     }
 
     @Bean
-
     public PasswordEncoder passwordEncoder(){
         return new MD5Encoder();
     }

@@ -2,7 +2,6 @@ package com.digi.banksystem.config;
 
 import com.digi.banksystem.model.User;
 import com.digi.banksystem.service.UserService;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
