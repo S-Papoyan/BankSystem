@@ -26,7 +26,7 @@ public class User {
     @Column(name = "last_name")
     @NotBlank
     private String surname;
-    @NotBlank
+    @NonNull
     private int year;
     @Email
     private String email;
@@ -38,7 +38,6 @@ public class User {
     private Status status;
     @Column(name = "reset_token")
     private String resetToken;
-
 
 
 }

@@ -45,6 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.
                 ignoring().
-                antMatchers(HttpMethod.POST, "/user/**");
+                antMatchers(HttpMethod.POST, "/user/create").
+                antMatchers(HttpMethod.PATCH, "/user/**");
     }
 }

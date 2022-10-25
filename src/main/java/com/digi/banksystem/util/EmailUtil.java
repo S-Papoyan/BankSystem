@@ -15,7 +15,6 @@ public class EmailUtil {
     @Async
     public void sendEmail(String to, String subject, String text) {
 
-
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("banksystemdigi@gmail.com");
         message.setTo(to);
@@ -25,5 +24,4 @@ public class EmailUtil {
         mailSender.send(message);
 
     }
-
 }
