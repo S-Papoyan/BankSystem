@@ -16,7 +16,7 @@ public class EmailUtil {
     public void sendEmail(String to, String subject, String text) {
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("banksystemdigi@gmail.com");
+        message.setFrom("digi50707@yandex.ru");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
