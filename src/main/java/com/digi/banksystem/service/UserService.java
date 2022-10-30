@@ -18,4 +18,6 @@ public interface UserService {
 
     void updateUser(Integer id, UserDTO userDTO) throws BadRequest, NotFoundException;
 
+    void forgetPassword(String email, String newPassword, String confirmPassword) throws NotFoundException;
+
 }

@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.Optional;
 
@@ -74,7 +73,7 @@ public class UserServiceImpl implements UserService {
     public void changePassword(String email, String oldPassword,
                                String newPassword, String confirmPassword) throws ValidationException, NotFoundException {
         if (!newPassword.equals(confirmPassword)) {
-            throw new ValidationException(ErrorMessages.NOT_MUCH);
+            throw new ValidationException(ErrorMessages.NOT_MATCH);
         }
         User user = userRepository.getByEmail(email);
         if (!user.getPassword().equals(passwordEncoder.encode(oldPassword))) {
@@ -104,5 +103,15 @@ public class UserServiceImpl implements UserService {
         updateUser.setSurname(userDTO.getSurname() == null ? updateUser.getSurname() : userDTO.getSurname());
         updateUser.setYear(userDTO.getYear() == 0 ? updateUser.getYear() : userDTO.getYear());
         userRepository.save(updateUser);
+    }
+
+    @Override
+    public void forgetPassword(String email, String newPassword, String confirmPassword) throws NotFoundException {
+        if (!newPassword.equals(confirmPassword)) {
+            throw new NotFoundException(ErrorMessages.NOT_MATCH);
+        }
+        User user = userRepository.getByEmail(email);
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
     }
 }

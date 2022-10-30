@@ -46,4 +46,10 @@ public class UserController {
         service.updateUser(id, userDTO);
         return ResponseEntity.ok().build();
     }
+
+    @PatchMapping("/forget-password")
+    public ResponseEntity<?> forgetPassword( String email, String newPassword, String confirmPassword) throws NotFoundException {
+        service.forgetPassword(email, newPassword, confirmPassword);
+        return ResponseEntity.ok().build();
+    }
 }
