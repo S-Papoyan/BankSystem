@@ -1,5 +1,6 @@
 package com.digi.banksystem.service.impl;
 
+import com.digi.banksystem.exceptions.BadRequest;
 import com.digi.banksystem.exceptions.ErrorMessages;
 import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.exceptions.ValidationException;
@@ -14,6 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -79,5 +83,26 @@ public class UserServiceImpl implements UserService {
         }
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
+    }
+
+    @Override
+    public void updateUser(Integer id, UserDTO userDTO) throws BadRequest, NotFoundException {
+        if (id == null) {
+            throw new BadRequest("User id must not be null");
+        }
+        Optional<User> user = null;
+        try {
+            user = userRepository.findById(id);
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
+        if (user.isEmpty()) {
+            throw new NotFoundException("User not found whit given ID");
+        }
+        User updateUser = user.get();
+        updateUser.setName(userDTO.getName() == null ? updateUser.getName() : userDTO.getName());
+        updateUser.setSurname(userDTO.getSurname() == null ? updateUser.getSurname() : userDTO.getSurname());
+        updateUser.setYear(userDTO.getYear() == 0 ? updateUser.getYear() : userDTO.getYear());
+        userRepository.save(updateUser);
     }
 }

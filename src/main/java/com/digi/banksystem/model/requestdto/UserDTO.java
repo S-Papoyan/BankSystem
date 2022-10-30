@@ -1,5 +1,6 @@
 package com.digi.banksystem.model.requestdto;
 
+import com.digi.banksystem.model.User;
 import lombok.Data;
 
 @Data

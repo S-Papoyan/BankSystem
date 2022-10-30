@@ -1,5 +1,6 @@
 package com.digi.banksystem.controller;
 
+import com.digi.banksystem.exceptions.BadRequest;
 import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.exceptions.ValidationException;
 import com.digi.banksystem.model.requestdto.UserDTO;
@@ -37,6 +38,12 @@ public class UserController {
                                             Principal principal) throws ValidationException, NotFoundException {
         String email = principal.getName();
         service.changePassword(email, oldPassword, newPassword, confirmPassword);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping
+    public ResponseEntity<?> updateUser(@RequestParam int id, @RequestBody UserDTO userDTO) throws BadRequest, NotFoundException {
+        service.updateUser(id, userDTO);
         return ResponseEntity.ok().build();
     }
 }
