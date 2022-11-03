@@ -47,9 +47,29 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @PatchMapping("/forget-password")
-    public ResponseEntity<?> forgetPassword( String email, String newPassword, String confirmPassword) throws NotFoundException {
-        service.forgetPassword(email, newPassword, confirmPassword);
+    @GetMapping("/get-email")
+    public ResponseEntity<?> getEmail(@RequestParam String email) throws NotFoundException {
+        service.getEmail(email);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/get-token")
+    public ResponseEntity<?> getToken(@RequestParam String email, @RequestParam String token) throws ValidationException {
+
+        return ResponseEntity.ok(service.getToken(email, token));
+    }
+
+    @PatchMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestParam String email,
+                                            @RequestParam String newPassword,
+                                            @RequestParam String confirmPassword) throws ValidationException {
+        service.forgotPassword(email, newPassword, confirmPassword);
         return ResponseEntity.ok().build();
     }
 }
+
+
+
+
+
+

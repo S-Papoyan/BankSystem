@@ -18,6 +18,9 @@ public interface UserService {
 
     void updateUser(Integer id, UserDTO userDTO) throws BadRequest, NotFoundException;
 
-    void forgetPassword(String email, String newPassword, String confirmPassword) throws NotFoundException;
+    void getEmail(String email) throws NotFoundException;
 
+    Boolean getToken(String email, String token) throws ValidationException;
+
+    void forgotPassword(String email, String newPassword, String confirmPassword) throws ValidationException;
 }

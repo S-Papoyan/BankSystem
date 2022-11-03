@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.Optional;
 
@@ -106,12 +107,37 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void forgetPassword(String email, String newPassword, String confirmPassword) throws NotFoundException {
+    public void getEmail(String email) throws NotFoundException {
+        User user = userRepository.getByEmail(email);
+        if (user == null) {
+            throw new NotFoundException(ErrorMessages.NOT_FOUND_USER);
+        }
+        String token = GenerateToken.generateToken();
+        user.setResetToken(token);
+        userRepository.save(user);
+        emailUtil.sendEmail(email, "your generated token", token);
+
+    }
+
+    @Override
+    public Boolean getToken(String email, String token) throws ValidationException {
+        User user = userRepository.getByEmail(email);
+        if (!user.getResetToken().equals(token)) {
+            throw new ValidationException(ErrorMessages.TOKEN_NOT_MATCH);
+        }
+        return true;
+    }
+
+    @Override
+    public void forgotPassword(String email, String newPassword, String confirmPassword) throws ValidationException {
         if (!newPassword.equals(confirmPassword)) {
-            throw new NotFoundException(ErrorMessages.NOT_MATCH);
+            throw new ValidationException(ErrorMessages.NOT_MATCH);
         }
         User user = userRepository.getByEmail(email);
         user.setPassword(passwordEncoder.encode(newPassword));
+        user.setResetToken(null);
         userRepository.save(user);
+
+
     }
 }
