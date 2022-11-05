@@ -1,14 +1,12 @@
 package com.digi.banksystem.controller;
 
+import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.model.requestdto.AddressDTO;
 import com.digi.banksystem.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -25,5 +23,8 @@ public class AddressController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
+    @GetMapping("/get-id/{id}")
+    public ResponseEntity<?> getAddressById(@PathVariable int id) throws NotFoundException {
+        return ResponseEntity.ok(addressService.getAddressById(id));
+    }
 }

@@ -7,6 +7,7 @@ import com.digi.banksystem.exceptions.ValidationException;
 import com.digi.banksystem.model.User;
 import com.digi.banksystem.model.enums.Status;
 import com.digi.banksystem.model.requestdto.UserDTO;
+import com.digi.banksystem.model.responsedto.UserResponseDTO;
 import com.digi.banksystem.repository.UserRepository;
 import com.digi.banksystem.service.UserService;
 import com.digi.banksystem.util.EmailUtil;
@@ -15,8 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpServerErrorException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -148,5 +150,19 @@ public class UserServiceImpl implements UserService {
             throw new NotFoundException("user not found with given ID");
         }
         return users.get();
+    }
+
+    @Override
+    public List<?> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        List<UserResponseDTO> userResponseDTOS = new ArrayList<>();
+        for (User user : users) {
+            UserResponseDTO userDTO = new UserResponseDTO();
+            userDTO.setName(user.getName());
+            userDTO.setSurname(user.getSurname());
+            userDTO.setYear(user.getYear());
+            userResponseDTOS.add(userDTO);
+        }
+        return userResponseDTOS;
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -74,7 +75,10 @@ public class UserController {
         return ResponseEntity.ok(service.getUser(id));
     }
 
-
+    @GetMapping("/get-all")
+    public ResponseEntity<?> getAllUsers() {
+        return ResponseEntity.ok(service.getAllUsers());
+    }
 }
 
 

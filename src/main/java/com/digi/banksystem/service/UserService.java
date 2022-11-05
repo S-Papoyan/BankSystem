@@ -6,6 +6,8 @@ import com.digi.banksystem.exceptions.ValidationException;
 import com.digi.banksystem.model.User;
 import com.digi.banksystem.model.requestdto.UserDTO;
 
+import java.util.List;
+
 public interface UserService {
 
     void create(UserDTO userDTO);
@@ -25,4 +27,6 @@ public interface UserService {
     void forgotPassword(String email, String newPassword, String confirmPassword) throws ValidationException;
 
     User getUser(int id) throws NotFoundException;
+
+    List<?> getAllUsers();
 }
