@@ -140,4 +140,13 @@ public class UserServiceImpl implements UserService {
 
 
     }
+
+    @Override
+    public User getUser(int id) throws NotFoundException {
+        Optional<User> users = userRepository.findById(id);
+        if (users.isEmpty()) {
+            throw new NotFoundException("user not found with given ID");
+        }
+        return users.get();
+    }
 }

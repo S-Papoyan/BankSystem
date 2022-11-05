@@ -3,6 +3,7 @@ package com.digi.banksystem.controller;
 import com.digi.banksystem.exceptions.BadRequest;
 import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.exceptions.ValidationException;
+import com.digi.banksystem.model.User;
 import com.digi.banksystem.model.requestdto.UserDTO;
 import com.digi.banksystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +67,14 @@ public class UserController {
         service.forgotPassword(email, newPassword, confirmPassword);
         return ResponseEntity.ok().build();
     }
+
+
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable int id) throws NotFoundException {
+        return ResponseEntity.ok(service.getUser(id));
+    }
+
+
 }
 
 

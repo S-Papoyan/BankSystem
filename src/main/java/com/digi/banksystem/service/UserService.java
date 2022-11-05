@@ -23,4 +23,6 @@ public interface UserService {
     Boolean getToken(String email, String token) throws ValidationException;
 
     void forgotPassword(String email, String newPassword, String confirmPassword) throws ValidationException;
+
+    User getUser(int id) throws NotFoundException;
 }
