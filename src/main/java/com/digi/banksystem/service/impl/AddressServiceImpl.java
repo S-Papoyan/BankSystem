@@ -4,9 +4,11 @@ import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.model.Address;
 import com.digi.banksystem.model.User;
 import com.digi.banksystem.model.requestdto.AddressDTO;
+import com.digi.banksystem.model.responsedto.AddressResponseDTO;
 import com.digi.banksystem.repository.AddressRepository;
 import com.digi.banksystem.repository.UserRepository;
 import com.digi.banksystem.service.AddressService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,11 +37,13 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public Address getAddressById(int id) throws NotFoundException {
+    public AddressResponseDTO getAddressById(int id) throws NotFoundException {
         Optional<Address> addresses = addressRepository.findById(id);
         if (addresses.isEmpty()) {
             throw new NotFoundException("address not found with given ID");
         }
-        return addresses.get();
+        Address address = addresses.get();
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.convertValue(address, AddressResponseDTO.class);
     }
 }

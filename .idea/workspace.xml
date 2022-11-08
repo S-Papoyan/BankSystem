@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="893000a3-6c03-48a3-9104-da3e6a38c481" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/UserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf1bc44c-7d52-4fd7-b2eb-7fe6b37dcb65.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf1bc44c-7d52-4fd7-b2eb-7fe6b37dcb65.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/AddressResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/UserResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/AddressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/AddressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +79,6 @@
     ]
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.digi.banksystem.model.responsedto" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="AppProperties" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="BankSystem" />
