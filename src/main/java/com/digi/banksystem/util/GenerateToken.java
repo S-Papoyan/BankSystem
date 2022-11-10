@@ -15,4 +15,9 @@ public class GenerateToken {
         return RandomStringUtils.random(10, false, true);
 
     }
+
+    public static String generateAccountNumber() {
+
+        return RandomStringUtils.random(14, false, true);
+    }
 }
