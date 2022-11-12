@@ -1,9 +1,9 @@
 package com.digi.banksystem.controller;
 
-
+import com.digi.banksystem.exceptions.NotFoundException;
 import com.digi.banksystem.exceptions.OperationException;
-import com.digi.banksystem.model.Account;
 import com.digi.banksystem.model.User;
+import com.digi.banksystem.model.responsedto.AccountResponseDTO;
 import com.digi.banksystem.service.AccountService;
 import com.digi.banksystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.List;
 
 @RestController
 @RequestMapping("/account")
@@ -24,7 +23,6 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
-
     @PostMapping("/create-AMD-current-account")
     public ResponseEntity<?> createAMDAccount(Principal principal) {
         accountService.createAMDCurrentAccount(principal.getName());
@@ -32,10 +30,10 @@ public class AccountController {
     }
 
     @GetMapping("/get-all-accounts")
-    public ResponseEntity<?> getByUserID(Principal principal) {
+    public ResponseEntity<?> getByUserID(Principal principal) throws NotFoundException {
         String email = principal.getName();
         User user = userService.getByEmail(email);
-        List<Account> byUserId = accountService.getByUserId(user.getId());
+        AccountResponseDTO byUserId = accountService.getByUserId(user.getId());
         return ResponseEntity.ok(byUserId);
     }
 

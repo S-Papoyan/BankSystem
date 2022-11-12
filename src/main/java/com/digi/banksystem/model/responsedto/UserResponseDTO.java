@@ -18,6 +18,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserResponseDTO {
+
     @JsonIgnore
     private int id;
     @JsonProperty("name")

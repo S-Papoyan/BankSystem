@@ -1,6 +1,9 @@
 package com.digi.banksystem.model;
 
+import com.digi.banksystem.model.enums.AccountName;
+import com.digi.banksystem.model.enums.Currency;
 import com.digi.banksystem.model.enums.Status;
+import com.digi.banksystem.model.enums.StatusAccount;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,11 +21,15 @@ public class Account {
     @Column(name = "account_id")
     private int id;
     @Column(name = "account_name")
-    private String accountName;
-    private String currency;
+    @Enumerated(value = EnumType.STRING)
+    private AccountName accountName;
+    @Enumerated(value = EnumType.STRING)
+    private Currency currency;
+    @Column(name = "account_number")
     private Long accountNumber;
     private Double balance;
-    private Status status;
+    @Enumerated(value = EnumType.STRING)
+    private StatusAccount status;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

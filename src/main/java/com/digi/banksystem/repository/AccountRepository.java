@@ -18,10 +18,3 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     List<Account> getAccountsByUserId(int id);
 
 }
-/*
-name
-email
-subject
-comment
-
- */
