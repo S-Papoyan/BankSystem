@@ -47,6 +47,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 ignoring().
                 antMatchers(HttpMethod.POST, "/user/create").
                 antMatchers(HttpMethod.PATCH, "/user/verify", "/user/forgot-password").
-                antMatchers(HttpMethod.GET, "/user/get-email", "/user/get-token");
+                antMatchers(HttpMethod.GET, "/user/get-email", "/user/get-token", "/user/getById/**");
     }
 }

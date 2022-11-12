@@ -29,4 +29,6 @@ public interface UserService {
     User getUser(int id) throws NotFoundException;
 
     List<?> getAllUsers();
+
+    List<User> searchUser(String name);
 }

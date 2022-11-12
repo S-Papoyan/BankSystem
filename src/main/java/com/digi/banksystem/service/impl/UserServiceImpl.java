@@ -165,4 +165,9 @@ public class UserServiceImpl implements UserService {
         }
         return userResponseDTOS;
     }
+
+    @Override
+    public List<User> searchUser(String name) {
+        return userRepository.searchUser(name);
+    }
 }

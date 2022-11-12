@@ -17,5 +17,11 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     @Query(nativeQuery = true, value = "SELECT * FROM account where user_id = ?")
     List<Account> getAccountsByUserId(int id);
 
-
 }
+/*
+name
+email
+subject
+comment
+
+ */
