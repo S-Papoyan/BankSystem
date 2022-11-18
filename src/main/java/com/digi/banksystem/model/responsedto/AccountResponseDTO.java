@@ -4,7 +4,6 @@ import com.digi.banksystem.model.enums.AccountName;
 import com.digi.banksystem.model.enums.Currency;
 import com.digi.banksystem.model.enums.StatusAccount;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;

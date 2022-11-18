@@ -15,6 +15,6 @@ public interface AccountService {
 
     void accountCreditingInCash(String email, Double amount);
 
-    void cashWithdrawal(String email, Double amount) throws OperationException;
+    boolean cashWithdrawal(String email, Double amount) throws OperationException;
 
 }

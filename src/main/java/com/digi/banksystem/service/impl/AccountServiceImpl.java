@@ -67,7 +67,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void cashWithdrawal(String email, Double amount) throws OperationException {
+    public boolean cashWithdrawal(String email, Double amount) throws OperationException {
         User user = userRepository.getByEmail(email);
         Account account = accountRepository.getAccountsByUserId(user.getId()).get(0);
         if (amount > account.getBalance()) {
@@ -75,5 +75,6 @@ public class AccountServiceImpl implements AccountService {
         }
         account.setBalance(account.getBalance() - amount);
         accountRepository.save(account);
+        return true;
     }
 }
