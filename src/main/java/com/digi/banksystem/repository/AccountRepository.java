@@ -12,9 +12,11 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 
-    @Modifying
-    @Transactional
+
     @Query(nativeQuery = true, value = "SELECT * FROM account where user_id = ?")
     List<Account> getAccountsByUserId(int id);
+
+    @Query(nativeQuery = true, value = "SELECT * FROM account where account_number = ?")
+    Account getByAccountNumber (long accountNumber);
 
 }

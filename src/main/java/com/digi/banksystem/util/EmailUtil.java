@@ -20,7 +20,6 @@ public class EmailUtil {
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
-
         mailSender.send(message);
 
     }

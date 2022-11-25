@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class APIServiceElectricityImpl implements APIServiceElectricity {
 
-
     private AccountService accountService;
 
     public static final String URL = "http://localhost:8081/electricity/";
@@ -21,8 +20,9 @@ public class APIServiceElectricityImpl implements APIServiceElectricity {
     }
 
     @Override
-    public ElectricityAPI pay(long socialNumber, double paymentAmount) {
+    public ElectricityAPI pay(long socialNumber, int paymentAmount) {
         RestTemplate restTemplate = new RestTemplate();
+
         return restTemplate.getForObject(URL + "pay?socialNumber=" + socialNumber + "&paymentAmount=" + paymentAmount, ElectricityAPI.class);
 
     }

@@ -34,11 +34,10 @@ public class AccountResponseDTO {
     @JsonProperty("accountNumber")
     private String accountNumber;
     @JsonProperty("balance")
-    private String balance;
+    private double balance;
     @JsonIgnore
     private StatusAccount status;
     @JsonProperty("user")
     private UserResponseDTO userResponseDTO;
-
 
 }

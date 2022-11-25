@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="893000a3-6c03-48a3-9104-da3e6a38c481" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/API/AddressAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/API/ElectricityAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/API/UserAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/APIServiceElectricity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/LoanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/Loan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/requestdto/LoanDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/LoanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/LoanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/LoanServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf1bc44c-7d52-4fd7-b2eb-7fe6b37dcb65.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf1bc44c-7d52-4fd7-b2eb-7fe6b37dcb65.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/requestdto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/requestdto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/exceptions/ErrorMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/exceptions/ErrorMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/AccountResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/AccountResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/APIServiceElectricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/APIServiceElectricity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/util/EmailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/util/EmailUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/util/GenerateToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/util/GenerateToken.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +148,17 @@
       <workItem from="1668446727741" duration="5298000" />
       <workItem from="1668501330071" duration="2680000" />
       <workItem from="1668698079426" duration="2122000" />
+      <workItem from="1668770873255" duration="706000" />
+      <workItem from="1668935017397" duration="304000" />
+      <workItem from="1668938375559" duration="4478000" />
+      <workItem from="1669027573352" duration="11915000" />
+      <workItem from="1669131380696" duration="4625000" />
+      <workItem from="1669200444201" duration="1032000" />
+      <workItem from="1669206396414" duration="8403000" />
+      <workItem from="1669219825317" duration="3112000" />
+      <workItem from="1669285041526" duration="12688000" />
+      <workItem from="1669314362253" duration="1469000" />
+      <workItem from="1669380956575" duration="4572000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1665821427298</created>
@@ -196,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668258554434</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit">
+      <created>1668770971985</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668770971985</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

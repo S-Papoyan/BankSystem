@@ -15,7 +15,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+    @RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -69,7 +69,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-
     @GetMapping("/getById/{id}")
     public ResponseEntity<?> getUserById(@PathVariable int id) throws NotFoundException {
         return ResponseEntity.ok(service.getUser(id));
@@ -79,7 +78,6 @@ public class UserController {
     public ResponseEntity<?> getAllUsers() {
         return ResponseEntity.ok(service.getAllUsers());
     }
-
 
     @GetMapping("/search")
     public ResponseEntity<?> searchUser(@RequestParam String name) {

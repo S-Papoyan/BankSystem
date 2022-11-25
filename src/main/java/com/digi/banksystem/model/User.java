@@ -39,5 +39,4 @@ public class User {
     @Column(name = "reset_token")
     private String resetToken;
 
-
 }

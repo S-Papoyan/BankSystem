@@ -8,5 +8,6 @@ public interface ErrorMessages {
     String NOT_FOUND_PASSWORD = "user not found with given password";
     String TOKEN_NOT_MATCH = "token dont not match";
     String OPERATION_EXCEPTION = "There is not enough money in the account";
+    String TRANSFER_EXCEPTION = "Account currencies do not match";
 
 }

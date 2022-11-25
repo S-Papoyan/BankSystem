@@ -7,5 +7,5 @@ public interface APIServiceElectricity {
 
     ElectricityAPI getElPaymentsBySocialNumber(long socialNumber);
 
-    ElectricityAPI pay(long socialNumber, double paymentAmount) throws OperationException;
+    ElectricityAPI pay(long socialNumber, int paymentAmount) throws OperationException;
 }

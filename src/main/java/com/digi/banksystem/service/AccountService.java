@@ -11,10 +11,21 @@ public interface AccountService {
 
     void createAMDCurrentAccount(String email);
 
-    AccountResponseDTO getByUserId(int id) throws NotFoundException;
+    void createUSDCurrentAccount(String email);
 
-    void accountCreditingInCash(String email, Double amount);
+    List<AccountResponseDTO> getByUserID(int id) throws NotFoundException;
 
-    boolean cashWithdrawal(String email, Double amount) throws OperationException;
+    AccountResponseDTO getByAccountNumber(long accountNumber) throws NotFoundException;
+
+    void accountCreditingInCash(long accountNumber, double amount);
+
+    void cashWithdrawal(long accountNumber, double amount) throws OperationException;
+
+    void transfersBetweenAccounts(long accountNumberFrom, long accountNumberTo, double amount) throws OperationException, NotFoundException;
+
+    void changeUSDtoAMD(long accountNumberFrom, long accountNumberTo, double amount, double exchangeRate) throws NotFoundException, OperationException;
+
+    void changeAMDtoUSD(long accountNumberFrom, long accountNumberTo, double amount, double exchangeRate) throws NotFoundException, OperationException;
+
 
 }
