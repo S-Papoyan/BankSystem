@@ -3,18 +3,20 @@ package com.digi.banksystem.service.APIservice.serviceimpl;
 import com.digi.banksystem.model.API.ElectricityAPI;
 import com.digi.banksystem.service.APIservice.APIServiceElectricity;
 import com.digi.banksystem.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 
 @Service
 public class APIServiceElectricityImpl implements APIServiceElectricity {
 
+    @Autowired
     private AccountService accountService;
 
-    public static final String URL = "http://localhost:8081/electricity/pay";
+    public static final String URL = "http://localhost:8081/electricity/";
 
     @Override
     public ElectricityAPI getElPaymentsBySocialNumber(long socialNumber) {
@@ -23,21 +25,21 @@ public class APIServiceElectricityImpl implements APIServiceElectricity {
     }
 
     @Override
-    public Object pay(long socialNumber, int paymentAmount) {
+    public ElectricityAPI pay(long socialNumber, int paymentAmount) {
+        HttpHeaders httpHeaders = new HttpHeaders();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-String s = "{\n" +
-        "    \"socialNumber\":" + socialNumber +"\n"+
-        "    \"paymentAmount\":" + paymentAmount +"\n"+
-        "    \n" +
-        "}";
 
-        HttpEntity httpEntity = new HttpEntity(s, headers);
+        String s = "{\n" +
+                "    \"socialNumber\":" + socialNumber + "\n" +
+                "    \"paymentAmount\":" + paymentAmount + "\n" +
+                "    \n" +
+                "}";
+        HttpEntity<String> entity = new HttpEntity<>(s, httpHeaders);
 
         RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.patchForObject(URL + "pay", entity, ElectricityAPI.class);
 
-        return restTemplate.patchForObject(URL, httpEntity , Object.class);
+//        return restTemplate.getForObject(URL + "pay?socialNumber=" + socialNumber + "&paymentAmount=" + paymentAmount, ElectricityAPI.class);
 
     }
 }

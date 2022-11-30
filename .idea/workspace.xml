@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="893000a3-6c03-48a3-9104-da3e6a38c481" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/responsedto/LoanResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/model/Loan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/repository/LoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/APIServiceElectricity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/APIServiceElectricity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/LoanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/impl/LoanServiceImpl.java" afterDir="false" />
@@ -31,7 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -145,7 +144,12 @@
       <workItem from="1669219825317" duration="3112000" />
       <workItem from="1669285041526" duration="12688000" />
       <workItem from="1669314362253" duration="1469000" />
-      <workItem from="1669380956575" duration="4572000" />
+      <workItem from="1669380956575" duration="5195000" />
+      <workItem from="1669460182167" duration="383000" />
+      <workItem from="1669463335629" duration="251000" />
+      <workItem from="1669544668301" duration="2277000" />
+      <workItem from="1669655702963" duration="2792000" />
+      <workItem from="1669797135785" duration="17939000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1665821427298</created>
@@ -210,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668770971985</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit">
+      <created>1669389879757</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669389879757</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,21 +242,5 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/digi/banksystem/controller/requestAPI/utilitypayments/APIControllerElectricity.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/digi/banksystem/service/APIservice/serviceimpl/APIServiceElectricityImpl.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

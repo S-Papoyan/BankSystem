@@ -23,6 +23,8 @@ public class APIControllerElectricity {
 
     @PatchMapping("/pay-from-user-account")
     public ResponseEntity<?> pay(@RequestParam long socialNumber, @RequestParam int paymentAmount) throws OperationException {
+
+
         return ResponseEntity.ok(apiServiceElectricity.pay(socialNumber, paymentAmount));
     }
 }
